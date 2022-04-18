@@ -5,23 +5,28 @@ class HashTable:
         self.data = [None] * self.size
 
     def hashfunction(self,key):
-        # Insert your hashing function code
+        #Insert your hashing function code
+        return key% self.size
+
+    def rehash (self,key):
+        #Insert your secondary hashing function code
+        return key // self.size
+        #mult = 1 
+        #hv = 0 
+        #for ch in key: 
+        #    hv += mult * ord(ch) 
+        #    mult += 1 
+        #return hv % self.size 
+
+    # def rehash(self,key):
+    #     # Insert your secondary hashing function code
         
-        mult = 1 
-        hv = 0 
-        for ch in key: 
-            hv += mult * ord(ch) 
-            mult += 1 
-        return hv % self.size 
-    def rehash(self,key):
-        # Insert your secondary hashing function code
-        
-        mult = 2 
-        hv = 0 
-        for ch in key: 
-            hv += mult * ord(ch) 
-            mult += 1 
-        return hv % self.size 
+    #     mult = 2 
+    #     hv = 0 
+    #     for ch in key: 
+    #         hv += mult * ord(ch) 
+    #         mult += 1 
+    #     return hv % self.size 
     
 
     def put(self,key,data):
